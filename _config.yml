@@ -1,0 +1,201 @@
+# External gems - updated to plugins in jekyll v3.6
+plugins:
+ # - jekyll-archives # Sorry, not GitHub pages friendly!
+ # - jekyll-assets
+ # - autoprefixer-rails
+   - jekyll-seo-tag
+   - jekyll-sitemap
+   - jekyll/tagging
+   - jekyll-tagging-related_posts
+
+# Site settings
+title: "Chris Humphreys"
+subtitle:
+name: "Chris Humphreys"
+description: UK based artist
+# Base URL of site (i.e. /blog). It should always start with a slash,
+# and never end with a slash. Set it to a blank value if hosting at the
+# root of your server.
+baseurl: ""
+# the base hostname & protocol for your site
+url: "https://www.chrishumphreys.co.uk"
+# apt-loris.cloudvent.net for Jekyll3
+asset_url: "/assets/"
+
+logo: "/assets/logo.png"
+show_logo: false
+email: a.ward@eyedivision.com
+
+default_post_image: "/assets/images/road_closed.jpg"
+default_gallery_image: "/assets/images/road_closed.jpg"
+
+show_social_top: true
+
+# Build settings
+markdown: kramdown
+
+#inter_post_navigation: false
+permalink: pretty
+highlightjs_theme: "monokai-sublime"
+
+# Colours for favicons etc
+themecolor: #ffffff
+tilecolor: #ffffff
+
+# Image CDN
+imagecdn:
+  staging: "https://ed-chrishumphreys-dev.imgix.net" # apt-loris.cloudvent.net
+  production: "https://ed-chrishumphreys.imgix.net"
+
+# Collections Example
+collections:
+    gallery:
+        output: true
+        permalink: /gallery/:path/
+        #_hide_content: true
+
+# Defaults Example
+defaults:
+    -
+        scope:
+            path: ""
+            type: "gallery"
+        values:
+            layout: "gallery"
+
+# https://docs.cloudcannon.com/editing/options/
+_options:
+  _text:            # text =
+    link: true
+    bold: true
+    italic: true
+    removeformat: true
+  _block:           # block = editable blocks within pages
+    link: true
+    bold: true
+    italic: true
+    removeformat: true
+    left: align-left
+    center: center-this-text
+    right: align-right
+    justify: full-width-text
+    undo: true
+    redo: true
+    format: p h2 h3 h4 h5 h6 div
+    numberedlist: true
+    bulletedlist: true
+    blockquote: true
+    image: true
+    styles: /css/editor.scss
+  content:
+    link: true
+    bold: true
+    italic: true
+    removeformat: true
+    left: align-left
+    center: center-this-text
+    right: align-right
+    justify: full-width-text
+    undo: true
+    redo: true
+    format: p h2 h3 h4 h5 h6 div
+    numberedlist: true
+    bulletedlist: true
+    blockquote: true
+    image: true
+    styles: /css/editor.scss
+
+
+# Payment settings
+# Environment settings
+#appurl:
+    # development: "http://0.0.0.0:4000"
+    #
+    # staging URL
+    # staging: "http://black-hare.cloudvent.net/"
+    #
+    # production URL
+    # production: ""
+
+# Snipcart API key
+# snipcart_api_key:
+
+# PayPal merchant ID
+# paypal_id:
+
+# Disqus comments
+disqus_shortname:
+
+# Google analytics
+# ga_tracking_id: ""
+
+# Google Recaptcha used for contact form - used by seo-tag
+recaptcha_site_key:
+
+# Google Site verification if required
+# google_site_verification: ""
+
+# Social icons and sharing options
+#
+# Social settings are used in two places:
+# * In the footer, as links to your personal profiles
+# * After each blog post for sharing widgets
+#
+# Example:
+#
+# social:
+#   - name: Twitter                         # Name of the service
+#     icon: twitter                         # SVG icon to use
+#     username: "@EyeDivision"              # (User) Name to display in the footer link
+#     url: https://twitter.com/EyeDivision  # URL of your profile (leave blank to not display in footer)
+#     desc: Follow me on Twitter            # Description to display as link title, etc
+#     share: true                           # Include in the "Share" section of posts
+social:
+
+  - name: Facebook
+    icon: icon-facebook_sign
+    username:
+    url:
+    desc: Like us on Facebook
+    title: Facebook icon
+    share: true
+
+  - name: Instagram
+    icon: icon-instagram
+    username:
+    url:
+    desc: Follow us on Instagram
+    title: Instagram icon
+    share: false
+
+  - name: Twitter
+    icon: icon-twitter_sign
+    username:
+    url:
+    desc: Follow us on Twitter
+    title: Twitter icon
+    share: true
+
+  - name: Pinterest
+    icon: icon-pinterest
+    username:
+    url:
+    desc: Follow us on Pinterest
+    title: Pinterest icon
+    share: true
+
+  - name: linkedin
+    icon: icon-linkedin_sign
+    username:
+    url:
+    desc: Connect with us on LinkedIn
+    title: LinkedIn icon
+    share: true
+
+fb_image: "/og-image.jpg"
+fb_image_width: 1103
+fb_image_height: 577
+# title, URL and description set in seo plugin above
+
+twitter_image: "/assets/logo.png"
+
