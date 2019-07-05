@@ -1,69 +1,164 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<title>Chris Humphreys</title>
-<meta name="description" content="Artist">
-<meta name="keywords" content="painting, British painter, UK art, fine art, oil painting">
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<META HTTP-EQUIV="Expires" CONTENT="-1">
-<link rel="stylesheet" href="css/artist.css" type="text/css">
-</head>
+---
+layout: home
+main_image_path:
+main_image_caption:
+show_carousel: false
+show_blog: false
+posts_number: 2
+carousel:
+  - image:
+    caption:
+    alink:
+  - image:
+    caption:
+    alink:
+_options:
+  layout:
+    hidden: true
+  image_path:
+    uploads_dir: "assets/images/:year"
+    width: 1200
+    height: 1200
+    resize_style: contain
+    mime_type: image/jpeg
+  main_image_path:
+    uploads_dir: "assets/images/:year"
+    width: 1200
+    height: 1200
+    resize_style: contain
+    mime_type: image/jpeg
+  content:
+    uploads_dir: "assets/:year"
+_comments:
+  main_image_path: Cover image
+  main_image_caption: Alt text for cover image
+  carousel: Edit the slideshow
+  show_carouse: Show the slideshow
+  show_blog: Show your latest posts on the homepage
+  posts_number: How many posts to show
+  alink: Optional web link from the slide
+  caption: optional caption
+---
+  {% if page.main_image_path %}
+  <!-- parallax picture please -->
+    <figure>
+    {% assign alt_text = page.title %}
+    {% if page.main_image_caption %} {% assign alt_text = page.main_image_caption %} {% endif %}
+    {% include img.html src=page.main_image_path alt=alt_text %}
+    <figcaption>{{ alt_text }}</figcaption>
+    </figure>
+  {% endif %}
 
-<body>
+  <div class="editable">
 
-<table width="100%" border="0" cellspacing="0" cellpadding="2" align="center">
-  <tr align="center">    
-	 <td align="center"> 
-      <h1>Chris Humphreys</h1>	
-  </tr>
-  <tr> 
-    <td align="center">
-	<p><a href="index.html">home</a> | <a href="thumbs.php%3Fcat=1.html">paintings</a> | <a href="thumbs.php%3Fcat=7.html">works on paper</a> |  <a href="contact.php.html">contact</a></p><h2>Paintings</h2>
-      </td>
-  </tr>
-  <p></p>
-</table>
+  </div>
 
-<table width="100%" border="0">
- <tr>
-  <td width="50%" align="left">
-		<P>Pictures 1 - 9 of 36</P>
-  </td>
-  <td width="50%" align="right">
-		<P>Page 1 of 4</P>
-  </td>
- </tr>
-</table>
-<TD>
-<TABLE align="center" width=620 cellspacing=0 cellpadding=15 border=0>
-<TR>
-<TD align="center"><p><A href="details.php%3Fimage_id=1&amp;cat=1.html"><IMG src="thumbs/thumb5.jpg" border=0></A><BR>Green frog</p></TD>
-<TD align="center"><p><A href="details.php%3Fimage_id=2&amp;cat=1.html"><IMG src="thumbs/thumb21.jpg" border=0></A><BR>Friends</p></TD>
-<TD align="center"><p><A href="details.php%3Fimage_id=3&amp;cat=1.html"><IMG src="thumbs/thumb28.jpg" border=0></A><BR>Untitled</p></TD>
-</TR>
-<TR>
-<TD align="center"><p><A href="details.php%3Fimage_id=4&amp;cat=1.html"><IMG src="thumbs/thumb22.jpg" border=0></A><BR>Untitled</p></TD>
-<TD align="center"><p><A href="details.php%3Fimage_id=5&amp;cat=1.html"><IMG src="thumbs/thumb9.jpg" border=0></A><BR>Untitled</p></TD>
-<TD align="center"><p><A href="details.php%3Fimage_id=6&amp;cat=1.html"><IMG src="thumbs/thumb19.jpg" border=0></A><BR>Untitled</p></TD>
-</TR>
-<TR>
-<TD align="center"><p><A href="details.php%3Fimage_id=7&amp;cat=1.html"><IMG src="thumbs/thumb23.jpg" border=0></A><BR>A very frightening creature</p></TD>
-<TD align="center"><p><A href="details.php%3Fimage_id=8&amp;cat=1.html"><IMG src="thumbs/thumb25.jpg" border=0></A><BR>Pig of death</p></TD>
-<TD align="center"><p><A href="details.php%3Fimage_id=9&amp;cat=1.html"><IMG src="thumbs/thumb16.jpg" border=0></A><BR>Pink pig</p></TD>
-</TR>
-</TABLE>
-  
-<p align="center">
+    {% if page.show_carousel and page.carousel %}
+    <section class="slideshow">
+      <h2>This is a demo slideshow</h2>
+      <div class="flexslider">
+          <ul class="slides">
+            {% for slides in page.carousel %}
+            <li>
+              {% if slides.alink %}
+                 <a href="{{ site.baseurl }}{{ slides.alink }}" title="View project">
+              {% endif %}
+              {% include img.html src=slides.image width=960 alt=slides.caption %}
+              {% if slides.alink %}
+                </a>
+              {% endif %}
+              {% if slides.caption %}
+                <p class="flex-caption">{% if slides.alink %}<a href="{{ site.baseurl }}{{ slides.alink }}" title="View project">{% endif %}{{ slides.caption }}{% if slides.alink %}&nbsp;<svg class="icon icon__white icon--readmore"><use xmlns:xlink="https://www.w3.org/1999/xlink" xlink:href="#icon-double_angle_right" /></svg></a>{% endif %}</p>
+              {% endif %}
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </section>
+      {% endif %}
 
-<b>1</b> 
-<a href="index.html%3Fcat=1&amp;page=9&amp;limit=9.html">2</a> 
-<a href="index.html%3Fcat=1&amp;page=18&amp;limit=9.html">3</a> 
-<a href="index.html%3Fcat=1&amp;page=27&amp;limit=9.html">4</a> 
- &nbsp;  <a href="index.html%3Fcat=1&amp;page=9&amp;limit=9.html">next</a>
+      <!-- Regular page promotions on front page -->
+      {% for section in site.pages %}
 
-</p>
+      {% if section.frontpage %}
+
+        {% if section.main_image_path %}
+          <section class="gallery--cover has--cover" style="background-image: url({{ section.main_image_path }});">
+        {% else %}
+          <section class="gallery--cover has--cover" style="background-image: url('https://placekitten.com/g/1200/300');">
+        {% endif %}
+
+          <a href="{{ section.url | prepend: site.baseurl }}">
+
+            <div class="scrim has--cover">
+              <article class="gallery--front">
+                <header class="gallery--header">
+                  <h2 class="cover--title mb0">{{ section.frontpagetitle }}</h2>
+                </header>
+                {% if section.homepage_description_markdown %}
+                  {{ section.homepage_description_markdown | markdownify }}
+                  <span class="post--readmore">Read more <span> <svg class="icon icon--post"><use xlink:href="#icon-double_angle_right" /></svg></span>
+
+                {% endif %}
+            </span>
+          </article>
+          </div>
+          </a>
+        </section>
+
+      {% endif %}
+
+    {% endfor %}
+
+      <!-- Galleries -->
+    {% for gallery in site.gallery %}
+
+      {% if gallery.frontpage %}
+
+        <section class="gallery--cover {% if gallery.main_image_path %}has--cover{% endif %}" {% if gallery.main_image_path %}style="background-image: url({{ gallery.main_image_path | prepend: gallery.baseurl }});"{% endif %}>
+
+          <a href="{{ gallery.url }}">
+
+            <div class="scrim {% if gallery.main_image_path %}has--cover{% endif %}">
+              <article class="gallery--front">
+                <header class="gallery--header">
+                  <h2 class="cover--title mb0">{{ gallery.frontpagetitle }}</h2>
+                </header>
+                {% if gallery.homepage_description_markdown %}
+                  {{ gallery.homepage_description_markdown | markdownify }} <span class="post--readmore">View gallery  <svg class="icon icon--post"><use xlink:href="#icon-double_angle_right" /></svg></span>
+                {% endif %}
+              </article>
+            </div>
+          </a>
+        </section>
+
+      {% endif %}
+
+    {% endfor %}
 
 
-</body>
-</html>
+{% if page.show_blog %}
+
+    <section class="blog blog--home">
+
+      <div class="editable">
+        <h2>Latest news</h2>
+      </div>
+
+      <ul class="posts--list">
+
+        {% for post in site.posts limit:page.posts_number %}
+
+         {% unless post.categories contains 'Archive' %}
+
+          {% include post_excerpt.html %}
+
+        {% endunless %}
+
+        {% endfor %}
+
+      </ul>
+      <p><a href="/news/">Read all news&nbsp;&raquo;</a></p>
+
+    </section>
+    {% endif %}
